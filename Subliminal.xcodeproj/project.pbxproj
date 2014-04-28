@@ -62,7 +62,6 @@
 		F016493D16D42E3C000AEB50 /* SLTestController+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = F016493B16D42E3C000AEB50 /* SLTestController+Internal.h */; };
 		F01EBC9B170115B100FF6A7C /* SLTextFieldTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F01EBC99170115B100FF6A7C /* SLTextFieldTest.m */; };
 		F01EBC9C170115B100FF6A7C /* SLTextFieldTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F01EBC9A170115B100FF6A7C /* SLTextFieldTestViewController.m */; };
-		F01EBC9E1701429400FF6A7C /* SLWebTextField.html in Resources */ = {isa = PBXBuildFile; fileRef = F01EBC9D1701429400FF6A7C /* SLWebTextField.html */; };
 		F024BE33168BD70900708350 /* TestUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F024BE32168BD70900708350 /* TestUtilities.m */; };
 		F025788B1890FF7A0084A6DB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F025788A1890FF7A0084A6DB /* Cocoa.framework */; };
 		F02578951890FF7A0084A6DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F02578931890FF7A0084A6DB /* InfoPlist.strings */; };
@@ -113,10 +112,6 @@
 		F0A04E1E1749F70F002C7520 /* SLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A04E1C1749F70F002C7520 /* SLElement.m */; };
 		F0A3F63417A715AE007529C3 /* SLTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = F0A3F63217A715AD007529C3 /* SLTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F0A3F63517A715AE007529C3 /* SLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F63317A715AE007529C3 /* SLTextView.m */; };
-		F0A3F63D17A7172E007529C3 /* SLTextViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F63A17A7172E007529C3 /* SLTextViewTest.m */; };
-		F0A3F63E17A7172E007529C3 /* SLTextViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F63B17A7172E007529C3 /* SLTextViewTestViewController.m */; };
-		F0A3F63F17A7172E007529C3 /* SLTextViewTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0A3F63C17A7172E007529C3 /* SLTextViewTestViewController.xib */; };
-		F0A3F64117A73198007529C3 /* SLWebTextView.html in Resources */ = {isa = PBXBuildFile; fileRef = F0A3F64017A73198007529C3 /* SLWebTextView.html */; };
 		F0AC809516BB299500C5D5C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0695E0C16013D77000B05D0 /* UIKit.framework */; };
 		F0AC809616BB299500C5D5C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0695D8E16011515000B05D0 /* Foundation.framework */; };
 		F0AC809816BB299500C5D5C0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0AC809716BB299500C5D5C0 /* CoreGraphics.framework */; };
@@ -260,7 +255,6 @@
 		F016493B16D42E3C000AEB50 /* SLTestController+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SLTestController+Internal.h"; sourceTree = "<group>"; };
 		F01EBC99170115B100FF6A7C /* SLTextFieldTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTextFieldTest.m; sourceTree = "<group>"; };
 		F01EBC9A170115B100FF6A7C /* SLTextFieldTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTextFieldTestViewController.m; sourceTree = "<group>"; };
-		F01EBC9D1701429400FF6A7C /* SLWebTextField.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SLWebTextField.html; sourceTree = "<group>"; };
 		F024BE31168BD70900708350 /* TestUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUtilities.h; sourceTree = "<group>"; };
 		F024BE32168BD70900708350 /* TestUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUtilities.m; sourceTree = "<group>"; };
 		F02578891890FF7A0084A6DB /* SLLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SLLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -313,10 +307,6 @@
 		F0A04E1C1749F70F002C7520 /* SLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLElement.m; sourceTree = "<group>"; };
 		F0A3F63217A715AD007529C3 /* SLTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTextView.h; sourceTree = "<group>"; };
 		F0A3F63317A715AE007529C3 /* SLTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTextView.m; sourceTree = "<group>"; };
-		F0A3F63A17A7172E007529C3 /* SLTextViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTextViewTest.m; sourceTree = "<group>"; };
-		F0A3F63B17A7172E007529C3 /* SLTextViewTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTextViewTestViewController.m; sourceTree = "<group>"; };
-		F0A3F63C17A7172E007529C3 /* SLTextViewTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLTextViewTestViewController.xib; sourceTree = "<group>"; };
-		F0A3F64017A73198007529C3 /* SLWebTextView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SLWebTextView.html; sourceTree = "<group>"; };
 		F0AC809416BB299500C5D5C0 /* Subliminal (Integration Tests).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Subliminal (Integration Tests).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AC809716BB299500C5D5C0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F0AC809B16BB299500C5D5C0 /* Subliminal Integration Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Subliminal Integration Tests-Info.plist"; sourceTree = "<group>"; };
@@ -494,7 +484,6 @@
 		F01EBC951701150E00FF6A7C /* SLTextField Tests */ = {
 			isa = PBXGroup;
 			children = (
-				F01EBC9D1701429400FF6A7C /* SLWebTextField.html */,
 				F01EBC99170115B100FF6A7C /* SLTextFieldTest.m */,
 				F01EBC9A170115B100FF6A7C /* SLTextFieldTestViewController.m */,
 			);
@@ -687,17 +676,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F0A3F63917A716FC007529C3 /* SLTextView Tests */ = {
-			isa = PBXGroup;
-			children = (
-				F0A3F63A17A7172E007529C3 /* SLTextViewTest.m */,
-				F0A3F63B17A7172E007529C3 /* SLTextViewTestViewController.m */,
-				F0A3F63C17A7172E007529C3 /* SLTextViewTestViewController.xib */,
-				F0A3F64017A73198007529C3 /* SLWebTextView.html */,
-			);
-			name = "SLTextView Tests";
-			sourceTree = "<group>";
-		};
 		F0AC809916BB299500C5D5C0 /* Integration Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -736,13 +714,12 @@
 			children = (
 				978B7F1D190E6A130090363F /* App Hook Tests */,
 				978B7F24190E77F20090363F /* DynamicValues Tests */,
-				9764EF6919097141009E6B68 /* SLNavigationBar Tests */,
-				9764EF6519097135009E6B68 /* SLTableViewCell Tests */,
+				F01EBC951701150E00FF6A7C /* SLTextField Tests */,
 				F07DA31F16E439B7004C2282 /* SLAlert Tests */,
 				F00800BF174B2CB0001927AC /* SLButton Tests */,
 				F0CE9FFE16D60E61008A3B4A /* SLDevice Tests */,
-				F01EBC951701150E00FF6A7C /* SLTextField Tests */,
-				F0A3F63917A716FC007529C3 /* SLTextView Tests */,
+				9764EF6919097141009E6B68 /* SLNavigationBar Tests */,
+				9764EF6519097135009E6B68 /* SLTableViewCell Tests */,
 			);
 			name = "Class Tests";
 			path = Tests;
@@ -1004,14 +981,11 @@
 				F0AC80A816BB299500C5D5C0 /* Default@2x.png in Resources */,
 				F0AC80AA16BB299500C5D5C0 /* Default-568h@2x.png in Resources */,
 				F0CEA00416D60EAD008A3B4A /* SLDeviceTestViewController.xib in Resources */,
-				F01EBC9E1701429400FF6A7C /* SLWebTextField.html in Resources */,
 				9764EF6F1909715F009E6B68 /* SLNavigationBarTestsViewController.xib in Resources */,
 				9764EF761909716B009E6B68 /* heart_icon&32.png in Resources */,
 				9764EF791909716B009E6B68 /* SLTableViewCellChildElementsTestViewController.xib in Resources */,
 				9764EF751909716B009E6B68 /* heart_empty_icon&32.png in Resources */,
 				F00800C9174B3349001927AC /* SLButtonTestViewController.xib in Resources */,
-				F0A3F63F17A7172E007529C3 /* SLTextViewTestViewController.xib in Resources */,
-				F0A3F64117A73198007529C3 /* SLWebTextView.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1127,8 +1101,6 @@
 				F00800C8174B3349001927AC /* SLButtonTestViewController.m in Sources */,
 				978B7F27190E781A0090363F /* SubclassLabel.m in Sources */,
 				9764EF781909716B009E6B68 /* SLTableViewCellChildElementsTestViewController.m in Sources */,
-				F0A3F63D17A7172E007529C3 /* SLTextViewTest.m in Sources */,
-				F0A3F63E17A7172E007529C3 /* SLTextViewTestViewController.m in Sources */,
 				9764EF6D1909715E009E6B68 /* SLNavigationBarTests.m in Sources */,
 				9764EF771909716B009E6B68 /* SLTableViewCellChildElementsTest.m in Sources */,
 			);

@@ -8,11 +8,11 @@
 
 #import "SLIntegrationTest.h"
 
-@interface focus_DynamicValueTest : SLIntegrationTest
+@interface DynamicValueTest : SLIntegrationTest
 
 @end
 
-@implementation focus_DynamicValueTest
+@implementation DynamicValueTest
 
 + (NSString *)testCaseViewControllerClassName {
     return @"DynamicValueTestViewController";
