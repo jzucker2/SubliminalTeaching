@@ -8,11 +8,11 @@
 
 #import "SLIntegrationTest.h"
 
-@interface focus_SLAppHookTest : SLIntegrationTest
+@interface SLAppHookTest : SLIntegrationTest
 
 @end
 
-@implementation focus_SLAppHookTest
+@implementation SLAppHookTest
 
 + (NSString *)testCaseViewControllerClassName {
     return @"SLAppHookTestViewController";
@@ -27,6 +27,7 @@
 - (void)testUseAppHookToSetButtonLabel {
     SLElement *testLabelFoo = [SLElement elementWithAccessibilityLabel:@"foo"];
     // put code here
+
 
     // now test should pass
     SLElement *testLabelBar = [SLElement elementWithAccessibilityLabel:@"bar"];
