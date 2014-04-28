@@ -25,47 +25,35 @@
 #import <Subliminal/SLTestController+AppHooks.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface SLTextFieldTestViewController : SLTestCaseViewController <UIWebViewDelegate>
+@interface SLTextFieldTestViewController : SLTestCaseViewController
 @end
 
 @implementation SLTextFieldTestViewController {
     UITextField *_textField;
-    UISearchBar *_searchBar;
-    UIWebView *_webView;
-    BOOL _webViewDidFinishLoad;
+    UIButton *_signInButton;
 }
 
 - (void)loadViewForTestCase:(SEL)testCase {
     UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
     const CGRect kTextFieldFrame = (CGRect){CGPointZero, CGSizeMake(100.0f, 30.0f)};
     if (testCase == @selector(testSetText) ||
-        testCase == @selector(testSetTextCanHandleTapHoldCharacters) ||
-        testCase == @selector(testSetTextClearsCurrentText) ||
-        testCase == @selector(testSetTextWhenFieldClearsOnBeginEditing) ||
-        testCase == @selector(testGetText) ||
-        testCase == @selector(testDoNotMatchEditorAccessibilityObjects) ||
+        testCase == @selector(testGetTextFromTextField) ||
         testCase == @selector(testClearTextButton) ||
-        // we'll test that we match the searchBar *and not* the textField
-        testCase == @selector(testMatchesSearchBarTextField)) {
-        
+        testCase == @selector(testSetTextAndTapSignInEnabledAfterTyping)) {
+
         _textField = [[UITextField alloc] initWithFrame:kTextFieldFrame];
         [view addSubview:_textField];
+    }
+    if (testCase == @selector(testSetTextAndTapSignInEnabledAfterTyping)) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableSignInButton) name:UITextFieldTextDidChangeNotification object:nil];
 
-        if (testCase == @selector(testMatchesSearchBarTextField)) {
-            _searchBar = [[UISearchBar alloc] initWithFrame:kTextFieldFrame];
-            [view addSubview:_searchBar];
-        }
-    } else if (testCase == @selector(testSetSearchBarText) ||
-               testCase == @selector(testGetSearchBarText)) {
-        _searchBar = [[UISearchBar alloc] initWithFrame:kTextFieldFrame];
-        [view addSubview:_searchBar];
-    } else if (testCase == @selector(testMatchesWebTextField) ||
-               testCase == @selector(testSetWebTextFieldText) ||
-               testCase == @selector(testSetWebTextFieldTextClearsCurrentText) ||
-               testCase == @selector(testGetWebTextFieldText)) {
-        _webView = [[UIWebView alloc] initWithFrame:view.bounds];
-        _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        [view addSubview:_webView];
+        _signInButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [_signInButton setTitle:@"Sign in" forState:UIControlStateNormal];
+        _signInButton.enabled = NO;
+        _signInButton.isAccessibilityElement = YES;
+        _signInButton.accessibilityLabel = @"Sign in";
+        _signInButton.frame = CGRectMake(100, 30, 100, 30);
+        [view addSubview:_signInButton];
     }
     self.view = view;
 }
@@ -73,15 +61,14 @@
 - (instancetype)initWithTestCaseWithSelector:(SEL)testCase {
     self = [super initWithTestCaseWithSelector:testCase];
     if (self) {
-        SLTestController *testController = [SLTestController sharedTestController];
-        [testController registerTarget:self forAction:@selector(text)];
-        [testController registerTarget:self forAction:@selector(webViewDidFinishLoad)];
+        [[SLTestController sharedTestController] registerTarget:self forAction:@selector(text)];
     }
     return self;
 }
 
 - (void)dealloc {
     [[SLTestController sharedTestController] deregisterTarget:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {
@@ -91,35 +78,11 @@
     _textField.borderStyle = UITextBorderStyleRoundedRect;
     if (self.testCase == @selector(testClearTextButton)) {
         _textField.clearButtonMode = UITextFieldViewModeAlways;
-    } else if (self.testCase == @selector(testSetTextWhenFieldClearsOnBeginEditing)) {
-        _textField.clearsOnBeginEditing = YES;
     }
 
-    if (self.testCase != @selector(testSetText) &&
-        self.testCase != @selector(testSetTextClearsCurrentText) &&
-        self.testCase != @selector(testSetTextWhenFieldClearsOnBeginEditing) &&
-        self.testCase != @selector(testDoNotMatchEditorAccessibilityObjects)) {
+    if (self.testCase != @selector(testSetText)) {
         _textField.text = @"foo";
     }
-
-    // note that it's not useful to set the accessibility label of the search bar,
-    // as we actually match the (private) textfield inside the search bar
-
-    if (self.testCase != @selector(testSetSearchBarText)) {
-        _searchBar.text = @"bar";
-    }
-
-    NSString *webViewHTMLPath = [[NSBundle mainBundle] pathForResource:@"SLWebTextField" ofType:@"html"];
-    NSURL *webViewHTMLURL = [NSURL fileURLWithPath:webViewHTMLPath];
-    NSURLRequest *webViewRequest = [NSURLRequest requestWithURL:webViewHTMLURL];
-    _webView.delegate = self;
-    [_webView loadRequest:webViewRequest];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSString *setTestCaseJS = [NSString stringWithFormat:@"setTestCase(\"%@\")", NSStringFromSelector(self.testCase)];
-    [_webView stringByEvaluatingJavaScriptFromString:setTestCaseJS];
-    _webViewDidFinishLoad = YES;
 }
 
 - (void)viewWillLayoutSubviews {
@@ -130,11 +93,6 @@
 
     CGPoint textFieldCenter = CGPointMake(self.view.center.x, self.view.center.y + kTextFieldVerticalOffset);
     _textField.center = textFieldCenter;
-    if (_textField) {
-        _searchBar.center = CGPointMake(_textField.center.x, _textField.center.y - 50.0f);
-    } else {
-        _searchBar.center = textFieldCenter;
-    }
 }
 
 #pragma mark - App hooks
@@ -142,28 +100,17 @@
 - (NSString *)text {
     NSString *text;
     if (self.testCase == @selector(testSetText) ||
-        self.testCase == @selector(testSetTextCanHandleTapHoldCharacters) ||
-        self.testCase == @selector(testSetTextClearsCurrentText) ||
-        self.testCase == @selector(testSetTextWhenFieldClearsOnBeginEditing) ||
-        self.testCase == @selector(testGetText) ||
-        self.testCase == @selector(testDoNotMatchEditorAccessibilityObjects) ||
-        self.testCase == @selector(testClearTextButton)) {
+        self.testCase == @selector(testGetTextFromTextField) ||
+        self.testCase == @selector(testClearTextButton) ||
+        self.testCase == @selector(testSetTextAndTapSignInEnabledAfterTyping)) {
         text = _textField.text;
-    } else if (self.testCase == @selector(testMatchesSearchBarTextField) ||
-               self.testCase == @selector(testSetSearchBarText) ||
-               self.testCase == @selector(testGetSearchBarText)) {
-        text = _searchBar.text;
-    } else if (self.testCase == @selector(testMatchesWebTextField) ||
-               self.testCase == @selector(testSetWebTextFieldText) ||
-               self.testCase == @selector(testSetWebTextFieldTextClearsCurrentText) ||
-               self.testCase == @selector(testGetWebTextFieldText)) {
-        text = [_webView stringByEvaluatingJavaScriptFromString:@"getText()"];
     }
     return text;
 }
 
-- (NSNumber *)webViewDidFinishLoad {
-    return @(_webViewDidFinishLoad);
+- (void)enableSignInButton
+{
+    _signInButton.enabled = YES;
 }
 
 @end

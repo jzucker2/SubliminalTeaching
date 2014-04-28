@@ -40,17 +40,10 @@
     [super setUpTestCaseWithSelector:testSelector];
 
     if (testSelector == @selector(testSetText) ||
-        testSelector == @selector(testSetTextCanHandleTapHoldCharacters) ||
-        testSelector == @selector(testSetTextClearsCurrentText) ||
-        testSelector == @selector(testSetTextWhenFieldClearsOnBeginEditing) ||
-        testSelector == @selector(testGetText) ||
-        testSelector == @selector(testDoNotMatchEditorAccessibilityObjects) ||
+        testSelector == @selector(setTextAndTapSignInEnabledAfterTyping) ||
+        testSelector == @selector(testGetTextFromTextField) ||
         testSelector == @selector(testClearTextButton)) {
         _textField = [SLTextField elementWithAccessibilityLabel:@"test element"];
-    } else if (testSelector == @selector(testMatchesSearchBarTextField) ||
-               testSelector == @selector(testSetSearchBarText) ||
-               testSelector == @selector(testGetSearchBarText)) {
-        _textField = [SLSearchField anyElement];
     }
 }
 
@@ -64,6 +57,35 @@
 - (void)testGetTextFromTextField {
     // value in text field should be @"foo"
     SLAssertTrue(NO, @"have not written test yet");
+}
+
+- (void)testClearTextButton {
+    SLAssertFalse([SLAskApp(text) isEqualToString:@""],
+                  @"For the purposes of this test case, the text field must have some initial value.");
+
+    SLButton *clearButton = [SLButton elementWithAccessibilityLabel:@"Clear text"];
+    // enter code here
+
+    // placeholder below so we can have a reference to the clear button
+    SLLogAsync(@"clearButton is %@", clearButton);
+
+    
+    // now test should be passing because text is cleared
+    SLAssertTrue([SLAskApp(text) isEqualToString:@""], @"Text was not cleared after tapping clear button.");
+}
+
+- (void)testSetTextAndTapSignInEnabledAfterTyping
+{
+    SLButton *signInButton = [SLButton elementWithAccessibilityLabel:@"Sign in"];
+    SLAssertTrue([UIAElement(signInButton) isValidAndVisible], @"sign in button does not exist");
+    SLAssertFalse([UIAElement(signInButton) isEnabled], @"sign in button starts disabled");
+    // fill out below to type in text field and enable sign in button
+
+
+
+    // this will fail until a string is typed in the text field (even though text is
+    // already there to start)
+    SLAssertTrue([UIAElement(signInButton) isEnabled], @"sign in button is now enabled");
 }
 
 @end

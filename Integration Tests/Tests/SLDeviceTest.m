@@ -21,13 +21,12 @@
 //
 
 #import "SLIntegrationTest.h"
-#import <OCMock/OCMock.h>
 
-@interface focus_SLDeviceTest : SLIntegrationTest
+@interface SLDeviceTest : SLIntegrationTest
 
 @end
 
-@implementation focus_SLDeviceTest
+@implementation SLDeviceTest
 
 + (NSString *)testCaseViewControllerClassName {
     return @"SLDeviceTestViewController";
