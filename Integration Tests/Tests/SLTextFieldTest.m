@@ -22,11 +22,11 @@
 
 #import "SLIntegrationTest.h"
 
-@interface SLTextFieldTest : SLIntegrationTest
+@interface focus_SLTextFieldTest : SLIntegrationTest
 
 @end
 
-@implementation SLTextFieldTest {
+@implementation focus_SLTextFieldTest {
     // _textField is id-typed so that it can represent SLTextFields
     // and SLWebTextFields
     id _textField;
@@ -57,33 +57,13 @@
 #pragma mark - SLTextField test cases
 
 - (void)testSetText {
+    // fill out test below
+    SLAssertTrue(NO, @"have not writtent test yet");
 }
 
 - (void)testGetTextFromTextField {
     // value in text field should be @"foo"
+    SLAssertTrue(NO, @"have not writtent test yet");
 }
 
-- (void)testClearTextButton {
-    SLAssertFalse([SLAskApp(text) isEqualToString:@""],
-                  @"For the purposes of this test case, the text field must have some initial value.");
-}
-
-//#pragma mark - SLSearchField test cases
-//
-//- (void)testMatchesSearchBarTextField {
-//    SLAssertTrue([UIAElement(_textField) isValid], @"Search bar should be valid.");
-//    SLAssertTrue([[UIAElement(_textField) text] isEqualToString:@"bar"], @"Did not match expected element.");
-//}
-//
-//- (void)testSetSearchBarText {
-//    NSString *const expectedText = @"bar";
-//    SLAssertNoThrow([UIAElement(_textField) setText:expectedText], @"Should not have thrown.");
-//    SLAssertTrue([SLAskApp(text) isEqualToString:expectedText], @"Text was not set to expected value.");
-//}
-//
-//- (void)testGetSearchBarText {
-//    NSString *text;
-//    SLAssertNoThrow(text = [UIAElement(_textField) text], @"Should not have thrown.");
-//    SLAssertTrue([text isEqualToString:@"bar"], @"Retrieved unexpected text: %@.", text);
-//}
 @end

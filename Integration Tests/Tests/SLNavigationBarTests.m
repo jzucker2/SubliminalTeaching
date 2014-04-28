@@ -20,11 +20,13 @@
 - (void)testRightButtonByMatchingChildElementInNavBar
 {
     // UINavigationBar has ax identifier @"NavigationBar"
+    SLAssertTrue(NO, @"have not writtent test yet");
 }
 
 - (void)testTitleLabelByMatchingChildElementInNavBar
 {
     // UINavigationBar has ax identifier @"NavigationBar"
+    SLAssertTrue(NO, @"have not writtent test yet");
 }
 
 @end

@@ -33,9 +33,11 @@ static NSString *const kExpectedText = @"foo";
 }
 
 - (void)testSetText {
+    SLAssertTrue(NO, @"have not writtent test yet");
 }
 
 - (void)testGetText {
+    SLAssertTrue(NO, @"have not writtent test yet");
 }
 
 @end

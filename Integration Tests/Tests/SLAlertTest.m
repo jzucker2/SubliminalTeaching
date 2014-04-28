@@ -51,6 +51,10 @@
     SLAskApp1(showAlertWithInfo:, (@{   @"title":   @"Random Alert",
                                         @"cancel":  cancelButtonTitle,
                                         @"other":   defaultButtonTitle }));
+    [self wait:SLAlertHandlerDidHandleAlertDelay];
+    // fill out rest of test here
+
+    SLAssertTrue(NO, @"have not writtent test yet");
 }
 
 - (void)testMultipleHandlersMayBeAddedSimultaneously {
@@ -61,11 +65,14 @@
 
 
     SLAskApp1(showAlertWithTitle:, alert1Title);
+    [self wait:SLAlertHandlerDidHandleAlertDelay];
     // Test that first alert was handled, second was not
 
     // showing the second alert may be slightly delayed by the first's dismissal
     SLAskApp1(showAlertWithTitle:, alert2Title);
+    [self wait:SLAlertHandlerDidHandleAlertDelay];
     // now test that the second alert was handled
+    SLAssertTrue(NO, @"have not writtent test yet");
 }
 
 @end
