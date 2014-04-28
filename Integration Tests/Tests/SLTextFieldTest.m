@@ -22,11 +22,11 @@
 
 #import "SLIntegrationTest.h"
 
-@interface focus_SLTextFieldTest : SLIntegrationTest
+@interface SLTextFieldTest : SLIntegrationTest
 
 @end
 
-@implementation focus_SLTextFieldTest {
+@implementation SLTextFieldTest {
     // _textField is id-typed so that it can represent SLTextFields
     // and SLWebTextFields
     id _textField;
@@ -58,12 +58,12 @@
 
 - (void)testSetText {
     // fill out test below
-    SLAssertTrue(NO, @"have not writtent test yet");
+    SLAssertTrue(NO, @"have not written test yet");
 }
 
 - (void)testGetTextFromTextField {
     // value in text field should be @"foo"
-    SLAssertTrue(NO, @"have not writtent test yet");
+    SLAssertTrue(NO, @"have not written test yet");
 }
 
 @end

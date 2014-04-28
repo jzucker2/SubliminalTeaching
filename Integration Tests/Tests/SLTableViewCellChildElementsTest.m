@@ -19,18 +19,18 @@
 }
 
 - (void)testTapTableViewCellButtonByMatchingFirstAccessibilityLabel {
-    SLAssertTrue(NO, @"have not writtent test yet");
+    SLAssertTrue(NO, @"have not written test yet");
 
 }
 
 - (void)testMatchingTableViewCellWithSLTableViewCellMethod
 {
-    SLAssertTrue(NO, @"have not writtent test yet");
+    SLAssertTrue(NO, @"have not written test yet");
 }
 
 - (void)testMatchingTableViewCellChildElementWithSLTableViewCellMethod
 {
-    SLAssertTrue(NO, @"have not writtent test yet");
+    SLAssertTrue(NO, @"have not written test yet");
 }
 
 @end

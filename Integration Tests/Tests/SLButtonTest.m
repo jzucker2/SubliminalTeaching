@@ -34,10 +34,10 @@
 
 - (void)testSLButtonMatchesUIButtonsAndObjectsWithButtonTrait {
     // SLButton matches UIButtons
-    SLAssertTrue(NO, @"have not writtent test yet");
+    SLAssertTrue(NO, @"have not written test yet");
 
     // but really any object (here, a plain UIView) with UIAccessibilityTraitButton
-    SLAssertTrue(NO, @"have not writtent test yet");
+    SLAssertTrue(NO, @"have not written test yet");
 }
 
 @end

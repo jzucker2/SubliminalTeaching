@@ -42,12 +42,12 @@
 
 - (void)testUseDeactivateAppForDuration {
     // This is more to show you can use backgrounding, don't worry about testing the functionality too much.
-    SLAssertTrue(NO, @"have not writtent test yet");
+    SLAssertTrue(NO, @"have not written test yet");
 }
 
 - (void)testCanRotateDevice
 {
-    SLAssertTrue(NO, @"have not writtent test yet");
+    SLAssertTrue(NO, @"have not written test yet");
 }
 
 NSString * SLNSStringFromUIDeviceOrientation(UIDeviceOrientation orientation) {

@@ -54,7 +54,7 @@
     [self wait:SLAlertHandlerDidHandleAlertDelay];
     // fill out rest of test here
 
-    SLAssertTrue(NO, @"have not writtent test yet");
+    SLAssertTrue(NO, @"have not written test yet");
 }
 
 - (void)testMultipleHandlersMayBeAddedSimultaneously {
@@ -72,7 +72,7 @@
     SLAskApp1(showAlertWithTitle:, alert2Title);
     [self wait:SLAlertHandlerDidHandleAlertDelay];
     // now test that the second alert was handled
-    SLAssertTrue(NO, @"have not writtent test yet");
+    SLAssertTrue(NO, @"have not written test yet");
 }
 
 @end
