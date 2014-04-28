@@ -436,10 +436,18 @@
 				978B7F1E190E71D30090363F /* DynamicValueTest.m */,
 				978B7F1F190E71D30090363F /* DynamicValueTestViewController.m */,
 				978B7F20190E71D30090363F /* DynamicValueTestViewController.xib */,
+				978B7F2D190ED7770090363F /* SubclassLabel */,
+			);
+			name = "DynamicValues Tests";
+			sourceTree = "<group>";
+		};
+		978B7F2D190ED7770090363F /* SubclassLabel */ = {
+			isa = PBXGroup;
+			children = (
 				978B7F25190E78190090363F /* SubclassLabel.h */,
 				978B7F26190E78190090363F /* SubclassLabel.m */,
 			);
-			name = "DynamicValues Tests";
+			name = SubclassLabel;
 			sourceTree = "<group>";
 		};
 		CAC388011641CD4800F995F9 /* Internal */ = {
