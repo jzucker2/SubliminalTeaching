@@ -23,11 +23,11 @@
 #import "SLIntegrationTest.h"
 #import <OCMock/OCMock.h>
 
-@interface SLDeviceTest : SLIntegrationTest
+@interface focus_SLDeviceTest : SLIntegrationTest
 
 @end
 
-@implementation SLDeviceTest
+@implementation focus_SLDeviceTest
 
 + (NSString *)testCaseViewControllerClassName {
     return @"SLDeviceTestViewController";
@@ -41,7 +41,7 @@
 }
 
 - (void)testUseDeactivateAppForDuration {
-    // This is more to show you can use backgrounding, don't worry about testing the functionality too much.
+    // Label will update after app becomes active
     SLAssertTrue(NO, @"have not written test yet");
 }
 
