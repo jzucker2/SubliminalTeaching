@@ -41,13 +41,20 @@
 
 - (void)testUseDeactivateAppForDuration {
     // Label will update after app becomes active
+    SLElement *backgroundLabel = [SLElement elementWithAccessibilityLabel:@"not backgrounded"];
+    SLAssertTrue([backgroundLabel isValidAndVisible], @"did not start with proper string");
 
-    SLAssertTrue(NO, @"have not written test yet");
+    [[SLDevice currentDevice] deactivateAppForDuration:5];
+    SLAssertFalse([backgroundLabel isValidAndVisible], @"label did not change value");
+    backgroundLabel = [SLElement elementWithAccessibilityLabel:@"did background"];
+    SLAssertTrue([backgroundLabel isValidAndVisible], @"label changed value");
 }
 
 - (void)testCanRotateDevice
 {
-    SLAssertTrue(NO, @"have not written test yet");
+    UIDeviceOrientation startingOrientation = [[UIDevice currentDevice] orientation];
+    [[SLDevice currentDevice] setOrientation:UIDeviceOrientationLandscapeLeft];
+    SLAssertFalse(startingOrientation == [[UIDevice currentDevice] orientation], @"orientation changed");
 }
 
 @end

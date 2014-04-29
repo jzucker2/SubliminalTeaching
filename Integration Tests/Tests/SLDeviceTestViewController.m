@@ -55,7 +55,8 @@
     [super viewDidLoad];
 
     _backgroundLabel.isAccessibilityElement = YES;
-    _backgroundLabel.accessibilityIdentifier = @"deactivatedLabel";
+    _backgroundLabel.accessibilityIdentifier = @"backgroundLabel";
+    _backgroundLabel.text = @"not backgrounded";
 }
 
 - (void)updateDeactivatedLabelText

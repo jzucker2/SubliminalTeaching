@@ -28,13 +28,13 @@
 - (NSString *)accessibilityLabel
 {
     // must be implemented for test
-    return nil;
+    return @"foo";
 }
 
 - (NSString *)accessibilityValue
 {
     // must be implemented for test
-    return nil;
+    return self.text;
 }
 
 @end

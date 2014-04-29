@@ -38,7 +38,7 @@
     self = [super initWithTestCaseWithSelector:testCase];
     if (self) {
         // Register for app hooks here
-        // [[SLTestController sharedTestController] registerTarget:self forAction:@selector(<FILL IN APP HOOK HERE>)];
+        [[SLTestController sharedTestController] registerTarget:self forAction:@selector(setNewLabelValue)];
     }
     return self;
 }
@@ -50,5 +50,9 @@
 
 #pragma mark - App hooks
 // Put your app hook below
+- (void)setNewLabelValue
+{
+    _testLabel.text = @"bar";
+}
 
 @end

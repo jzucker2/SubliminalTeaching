@@ -29,8 +29,10 @@
     [super viewDidLoad];
 
     _testButton.isAccessibilityElement = YES;
+    [_testButton setTitle:@"test button" forState:UIControlStateNormal];
 
     _testLabel.isAccessibilityElement = YES;
+    _testLabel.text = @"untapped";
 }
 
 - (instancetype)initWithTestCaseWithSelector:(SEL)testCase {

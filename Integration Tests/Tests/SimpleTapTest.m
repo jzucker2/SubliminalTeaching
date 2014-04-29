@@ -23,8 +23,17 @@
     // The label will change values when the button is tapped. Verify
     // the initial starting value of the label and that it changes
     // as expected
+    SLButton *testButton = [SLButton elementWithAccessibilityLabel:@"test button"];
+    SLAssertTrue([UIAElement(testButton) isValidAndVisible], @"did not find test button as expected");
 
-    SLAssertTrue(NO, @"have not written test yet");
+    SLElement *testLabel = [SLElement elementWithAccessibilityLabel:@"untapped"];
+    SLAssertTrue([UIAElement(testLabel) isValidAndVisible], @"test label was not found");
+
+    [UIAElement(testButton) tap];
+
+    SLAssertFalse([UIAElement(testLabel) isValidAndVisible], @"label remained the same");
+    testLabel = [SLElement elementWithAccessibilityLabel:@"tapped"];
+    SLAssertTrue([UIAElement(testLabel) isValidAndVisible], @"label did not update as expected");
 }
 
 @end
