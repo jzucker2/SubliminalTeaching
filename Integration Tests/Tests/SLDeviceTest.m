@@ -41,24 +41,13 @@
 
 - (void)testUseDeactivateAppForDuration {
     // Label will update after app becomes active
+
     SLAssertTrue(NO, @"have not written test yet");
 }
 
 - (void)testCanRotateDevice
 {
     SLAssertTrue(NO, @"have not written test yet");
-}
-
-NSString * SLNSStringFromUIDeviceOrientation(UIDeviceOrientation orientation) {
-	switch (orientation) {
-		case UIDeviceOrientationFaceDown:           return @"UIDeviceOrientationFaceDown";              break;
-		case UIDeviceOrientationFaceUp:             return @"UIDeviceOrientationFaceUp";                break;
-		case UIDeviceOrientationLandscapeLeft:      return @"UIDeviceOrientationLandscapeLeft";         break;
-		case UIDeviceOrientationLandscapeRight:     return @"UIDeviceOrientationLandscapeRight";        break;
-		case UIDeviceOrientationPortrait:           return @"UIDeviceOrientationPortrait";              break;
-		case UIDeviceOrientationPortraitUpsideDown: return @"UIDeviceOrientationPortraitUpsideDown";    break;
-		case UIDeviceOrientationUnknown:            return @"UIDeviceOrientationUnknown";               break;
-	}
 }
 
 @end

@@ -27,6 +27,7 @@
 - (void)testHandleParticularAlert {
     // Use TextField handling to fill out alert info below
 
+
     // code to tap button to display alert below
 
     // now wait for alert
@@ -53,6 +54,8 @@
     // Test that first alert was handled, second was not
 
     // showing the second alert may be slightly delayed by the first's dismissal
+    // fill out textfields with second alert info below
+    
     // now tap button to show second alert
 
     [self wait:SLAlertHandlerDidHandleAlertDelay];

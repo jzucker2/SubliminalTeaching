@@ -29,12 +29,10 @@
 @end
 
 @interface SLDeviceTestViewController ()
-@property (nonatomic, weak) IBOutlet UILabel *deactivatedLabel;
+@property (nonatomic, weak) IBOutlet UILabel *backgroundLabel;
 @end
 
-@implementation SLDeviceTestViewController {
-    NSTimer *_countdownTimer;
-}
+@implementation SLDeviceTestViewController
 
 + (NSString *)nibNameForTestCase:(SEL)testCase {
     return @"SLDeviceTestViewController";
@@ -56,13 +54,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _deactivatedLabel.isAccessibilityElement = YES;
-    _deactivatedLabel.accessibilityIdentifier = @"deactivatedLabel";
+    _backgroundLabel.isAccessibilityElement = YES;
+    _backgroundLabel.accessibilityIdentifier = @"deactivatedLabel";
 }
 
 - (void)updateDeactivatedLabelText
 {
-    _deactivatedLabel.text = @"did background";
+    _backgroundLabel.text = @"did background";
 }
 
 

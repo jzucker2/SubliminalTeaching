@@ -29,9 +29,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Do any additional setup after loading the view from its nib.
-    // Test case specific configuration is best done using app hooks
-    // triggered from -[SLAppHookTest setUpTestCaseWithSelector:].
     _testLabel.text = @"foo";
     _testLabel.isAccessibilityElement = YES;
     
@@ -40,7 +37,7 @@
 - (instancetype)initWithTestCaseWithSelector:(SEL)testCase {
     self = [super initWithTestCaseWithSelector:testCase];
     if (self) {
-        // Register for app hooks, e.g.
+        // Register for app hooks here
         // [[SLTestController sharedTestController] registerTarget:self forAction:@selector(<FILL IN APP HOOK HERE>)];
     }
     return self;
@@ -52,6 +49,6 @@
 }
 
 #pragma mark - App hooks
-// Put any app hooks below here
+// Put your app hook below
 
 @end

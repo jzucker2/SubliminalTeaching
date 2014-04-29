@@ -31,9 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Do any additional setup after loading the view from its nib.
-    // Test case specific configuration is best done using app hooks
-    // triggered from -[DynamicValueTest setUpTestCaseWithSelector:].
     _testLabel.text = @"foo";
     _testLabel.isAccessibilityElement = YES;
     // set _testLabel identifier below to be able to pass testcase
@@ -49,18 +46,10 @@
 - (instancetype)initWithTestCaseWithSelector:(SEL)testCase {
     self = [super initWithTestCaseWithSelector:testCase];
     if (self) {
-        // Register for app hooks, e.g.
     }
     return self;
 }
 
-// Deregister for app hooks, if any
-//- (void)dealloc {
-//    [[SLTestController sharedTestController] deregisterTarget:self];
-//}
-
-#pragma mark - App hooks
-// Put any app hooks below here
 - (void)setTestLabelText:(NSString *)text
 {
     // need to update label

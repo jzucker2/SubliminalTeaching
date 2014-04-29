@@ -18,12 +18,6 @@
     return @"SimpleTapTestViewController";
 }
 
-// If you override set-up methods,
-// you must call super at the beginning of your implementations.
-
-// If you override tear-down methods,
-// you must call super at the *end* of your implementations.
-
 - (void)testVerifyInitialLabelAndTapToChangeValue
 {
     // The label will change values when the button is tapped. Verify

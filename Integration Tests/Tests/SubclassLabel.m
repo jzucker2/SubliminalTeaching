@@ -19,15 +19,6 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
-
 - (BOOL)isAccessibilityElement
 {
     // return YES for elements and no for containers
@@ -36,13 +27,13 @@
 
 - (NSString *)accessibilityLabel
 {
-    // must be implemented for class
+    // must be implemented for test
     return nil;
 }
 
 - (NSString *)accessibilityValue
 {
-    // must be implemented for class
+    // must be implemented for test
     return nil;
 }
 
