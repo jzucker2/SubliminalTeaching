@@ -9,13 +9,22 @@
 #import "SLIntegrationTest.h"
 
 @interface UIAlertTest : SLIntegrationTest
-
+@property (nonatomic) SLButton *showAlertButton;
+@property (nonatomic) SLTextField *alertTitleTextField;
+@property (nonatomic) SLTextField *alertOtherTextField;
+@property (nonatomic) SLTextField *alertCancelTextField;
 @end
 
 @implementation UIAlertTest
 
 + (NSString *)testCaseViewControllerClassName {
     return @"UIAlertTestViewController";
+}
+
+- (void)setUpTestCaseWithSelector:(SEL)testCaseSelector
+{
+    [super setUpTestCaseWithSelector:testCaseSelector];
+    // Set subliminal ivar elements here
 }
 
 - (void)tearDownTestCaseWithSelector:(SEL)testCaseSelector {
@@ -25,6 +34,8 @@
 }
 
 - (void)testHandleParticularAlert {
+    // first set alert handler
+
     // Use TextField handling to fill out alert info below
 
 
@@ -47,6 +58,7 @@
     SLLogAsync(@"placeholder for unused alert variable %@", alert2Title);
     // add handler for second alert
 
+    // now fill out info for first alert
 
     // now tap button to display first alert
 

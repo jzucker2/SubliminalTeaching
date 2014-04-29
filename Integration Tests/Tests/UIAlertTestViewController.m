@@ -33,9 +33,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Do any additional setup after loading the view from its nib.
-    // Test case specific configuration is best done using app hooks
-    // triggered from -[UIAlertTest setUpTestCaseWithSelector:].
     _alertTitleTextField.isAccessibilityElement = YES;
     _alertTitleTextField.accessibilityIdentifier = @"alert title";
 
@@ -119,23 +116,6 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-//    _titleOfLastButtonClicked = [alertView buttonTitleAtIndex:buttonIndex];
-//
-//    switch (alertView.alertViewStyle) {
-//        case UIAlertViewStyleSecureTextInput:
-//        case UIAlertViewStylePlainTextInput:
-//            _textEnteredIntoLastTextFieldAtIndex0 = [[alertView textFieldAtIndex:0] text];
-//            _textEnteredIntoLastTextFieldAtIndex1 = nil;
-//            break;
-//        case UIAlertViewStyleLoginAndPasswordInput:
-//            _textEnteredIntoLastTextFieldAtIndex0 = [[alertView textFieldAtIndex:0] text];
-//            _textEnteredIntoLastTextFieldAtIndex1 = [[alertView textFieldAtIndex:1] text];
-//            break;
-//        default:
-//            _textEnteredIntoLastTextFieldAtIndex0 = nil;
-//            _textEnteredIntoLastTextFieldAtIndex1 = nil;
-//            break;
-//    }
 
     _activeAlertView = nil;
 }
