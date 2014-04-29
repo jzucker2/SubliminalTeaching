@@ -8,11 +8,11 @@
 
 #import "SLIntegrationTest.h"
 
-@interface focus_UIAlertTest : SLIntegrationTest
+@interface UIAlertTest : SLIntegrationTest
 
 @end
 
-@implementation focus_UIAlertTest
+@implementation UIAlertTest
 
 + (NSString *)testCaseViewControllerClassName {
     return @"UIAlertTestViewController";
