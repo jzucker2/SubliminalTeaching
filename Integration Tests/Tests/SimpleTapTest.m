@@ -29,6 +29,8 @@
     // The label will change values when the button is tapped. Verify
     // the initial starting value of the label and that it changes
     // as expected
+
+    SLAssertTrue(NO, @"have not written test yet");
 }
 
 @end
