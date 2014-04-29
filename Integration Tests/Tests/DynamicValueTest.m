@@ -20,7 +20,8 @@
 
 - (void)testSetIdentifierToTestChangingLabelAndValueUpdates {
     // matching for UIButton change matching to use identifier not label
-    SLElement *testLabel = [SLElement elementWithAccessibilityLabel:@"foo"];
+    //SLElement *testLabel = [SLElement elementWithAccessibilityLabel:@"foo"];
+    SLElement *testLabel = [SLElement elementWithAccessibilityIdentifier:@"foo"];
 
     // don't change test below
     SLAssertTrue([testLabel isValidAndVisible], @"test label was not found");

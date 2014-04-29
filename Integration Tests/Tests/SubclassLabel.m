@@ -37,13 +37,13 @@
 - (NSString *)accessibilityLabel
 {
     // must be implemented for class
-    return nil;
+    return @"foo";
 }
 
 - (NSString *)accessibilityValue
 {
     // must be implemented for class
-    return nil;
+    return self.text;
 }
 
 @end

@@ -37,6 +37,7 @@
     _testLabel.text = @"foo";
     _testLabel.isAccessibilityElement = YES;
     // set _testLabel identifier below to be able to pass testcase
+    _testLabel.accessibilityIdentifier = @"foo";
     
 
     [_testButton setTitle:@"Change to Bar" forState:UIControlStateNormal];

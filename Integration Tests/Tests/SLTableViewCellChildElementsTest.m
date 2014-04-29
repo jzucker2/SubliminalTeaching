@@ -19,18 +19,32 @@
 }
 
 - (void)testTapTableViewCellButtonByMatchingFirstAccessibilityLabel {
-    SLAssertTrue(NO, @"have not written test yet");
+    SLButton *favorite = [SLButton elementWithAccessibilityLabel:@"Favorite"];
+    SLAssertTrue([favorite isValidAndVisible], @"does not exist");
+    SLAssertTrue([favorite.value isEqualToString:@"off"], @"was not off originally");
+    [favorite tap];
+    SLAssertTrue([favorite isValidAndVisible], @"disappeared");
+    SLAssertTrue([favorite.value isEqualToString:@"on"], @"did not update");
 
 }
 
 - (void)testMatchingTableViewCellWithSLTableViewCellMethod
 {
-    SLAssertTrue(NO, @"have not written test yet");
+    SLTableViewCell *cell = [SLTableViewCell elementWithAccessibilityLabel:@"Cell 2"];
+    SLAssertTrue([cell isValidAndVisible], @"did not appear");
 }
 
 - (void)testMatchingTableViewCellChildElementWithSLTableViewCellMethod
 {
-    SLAssertTrue(NO, @"have not written test yet");
+    SLTableViewCell *cell = [SLTableViewCell elementWithAccessibilityLabel:@"Cell 2"];
+    SLAssertTrue([cell isValidAndVisible], @"did not appear");
+    SLButton *favoriteButton = [cell childElementMatching:[SLButton elementWithAccessibilityLabel:@"Favorite"]];
+    SLAssertTrue([favoriteButton isValidAndVisible], @"did not appear as expected");
+    SLAssertTrue([favoriteButton.value isEqualToString:@"off"], @"favorite button did not start off");
+    [favoriteButton tap];
+    SLAssertTrue([favoriteButton.value isEqualToString:@"on"], @"favorite button value changed");
+    [[SLDevice currentDevice] captureScreenshotWithFilename:@"end of test"];
+    [cell captureScreenshotWithFilename:@"hey"];
 }
 
 @end

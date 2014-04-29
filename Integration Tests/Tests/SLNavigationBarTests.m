@@ -20,13 +20,17 @@
 - (void)testRightButtonByMatchingChildElementInNavBar
 {
     // UINavigationBar has ax identifier @"NavigationBar"
-    SLAssertTrue(NO, @"have not written test yet");
+    SLNavigationBar *navBar = [SLNavigationBar elementWithAccessibilityIdentifier:@"NavigationBar"];
+    SLButton *rightButton = [navBar childElementMatching:[SLButton elementWithAccessibilityLabel:@"Right"]];
+    SLAssertTrue([rightButton isValidAndVisible], @"right button");
 }
 
 - (void)testTitleLabelByMatchingChildElementInNavBar
 {
     // UINavigationBar has ax identifier @"NavigationBar"
-    SLAssertTrue(NO, @"have not written test yet");
+    SLNavigationBar *navBar = [SLNavigationBar elementWithAccessibilityIdentifier:@"NavigationBar"];
+    SLElement *title = [navBar childElementMatching:[SLElement elementWithAccessibilityLabel:@"Testing"]];
+    SLAssertTrue([title isValidAndVisible], @"right button");
 }
 
 @end

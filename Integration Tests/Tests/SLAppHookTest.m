@@ -28,7 +28,7 @@
     SLElement *testLabelFoo = [SLElement elementWithAccessibilityLabel:@"foo"];
     // put code here
 
-
+    SLAskApp(setLabel);
     // now test should pass
     SLElement *testLabelBar = [SLElement elementWithAccessibilityLabel:@"bar"];
     SLAssertFalse([testLabelFoo isValidAndVisible], @"foo stayed the same");

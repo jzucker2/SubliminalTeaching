@@ -51,12 +51,13 @@
 
 - (void)testSetText {
     // fill out test below
-    SLAssertTrue(NO, @"have not written test yet");
+    [_textField setText:@"foo"];
+    SLAssertTrueWithTimeout([[_textField text] isEqualToString:SLAskApp(text)], 45, @"should have set text properly");
 }
 
 - (void)testGetTextFromTextField {
     // value in text field should be @"foo"
-    SLAssertTrue(NO, @"have not written test yet");
+    SLAssertTrue([[_textField text] isEqualToString:SLAskApp(text)], @"text field did not start with expected value");
 }
 
 - (void)testClearTextButton {
@@ -67,7 +68,7 @@
     // enter code here
 
     // placeholder below so we can have a reference to the clear button
-    SLLogAsync(@"clearButton is %@", clearButton);
+    [UIAElement(clearButton) tap];
 
     
     // now test should be passing because text is cleared
@@ -80,6 +81,8 @@
     SLAssertTrue([UIAElement(signInButton) isValidAndVisible], @"sign in button does not exist");
     SLAssertFalse([UIAElement(signInButton) isEnabled], @"sign in button starts disabled");
     // fill out below to type in text field and enable sign in button
+    [_textField setText:@"hey"];
+
 
 
 

@@ -35,11 +35,11 @@
 - (void)testSLButtonMatchesUIButtonsAndObjectsWithButtonTrait {
     // SLButton matches UIButtons
     SLButton *button = [SLButton elementWithAccessibilityLabel:@"button"];
-    SLAssertTrue([button isEqual:@(NO)], @"have not written test yet");
+    SLAssertTrue([button isValidAndVisible], @"did not appear");
 
     // but really any object (here, a plain UIView) with UIAccessibilityTraitButton
     SLButton *buttonElement = [SLButton elementWithAccessibilityLabel:@"button element"];
-    SLAssertTrue([buttonElement isEqual:@(NO)], @"have not written test yet");
+    SLAssertTrue([buttonElement isValidAndVisible], @"have not written test yet");
 }
 
 @end
